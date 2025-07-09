@@ -27,27 +27,35 @@ body{
 }
 .navbar{
     padding: 20px 50px;
-    text-align: right;
-    margin-bottom:150px;
-}
-.navbar ul{
-    list-style: none;
     display: flex;
-    justify-content: flex-end;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 60px;
 }
-.navbar li{
-   display: inline-block;
-   margin: 0 15px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
-.navbar a{
-    color: hsl(0, 0%, 80%);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+.nav-links li {
+  display: inline-block;
 }
-.navbar a:hover{
-   color: hsl(0, 0%, 60%);
+.nav-links a {
+  color: hsl(0, 0%, 80%);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: hsl(0, 0%, 60%);
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: hsl(183, 100%, 50%);
 }
 .hero{
     height: 100vh;
@@ -375,49 +383,53 @@ body{
 }
 /* Responsive Design*/
 /* 🌐 MOBILE RESPONSIVE LAYOUT */
-@media (max-width: 600px) {
-
-  /* Navbar */
-  .navbar {
-    justify-content: center;
-    text-align: center;
-    padding: 10px 15px;
-    margin-bottom: 50px;
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
   }
-
-  .navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background-color: hsla(0, 0%, 10%, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsl(183, 100%, 50%);
+    display: none;
   }
-
-  .navbar li {
-    margin: 5px 10px;
+  .nav-links.active {
+    display: flex;
   }
-
+  .nav-links li {
+    margin: 10px 0;
+  }
   /* Hero Section */
   .hero-content {
     flex-direction: column-reverse;
-    padding: 0 20px;
+    padding: 0 15px;
     text-align: center;
   }
-
   .hero-text {
     margin-bottom: 40px;
     text-align: center;
   }
-
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .hero-text h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-
+  #typing-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    word-break: break-word;
+  }
   .profile-img {
     width: 100px;
     height: 100px;
+    margin-top: 20px;
   }
 
   /* About Section */
