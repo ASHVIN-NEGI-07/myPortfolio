@@ -1,16 +1,29 @@
 // Typing text effect
-const text = "I build Web Apps, APIs and clean UIs.";
-let index = 0;
-const typingText = document.getElementById("typing-text");
+const line1 = "Writing clean, efficient and scalable code";
+const line2 = "Crafting smooth interfaces backed by strong logic"
+let i = 0;
+let j = 0;
 
-function typeEffect() {
-  if (index < text.length) {
-    typingText.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, 100);
+function typeFirstLine() {
+  if (i < line1.length) {
+    document.getElementById("typing-text-line1").textContent += line1.charAt(i);
+    i++;
+    setTimeout(typeFirstLine, 50);
+  } else {
+    setTimeout(typeSecondLine, 300); // Delay before starting 2nd line
   }
 }
-window.onload = typeEffect;
+
+function typeSecondLine() {
+  if (j < line2.length) {
+    document.getElementById("typing-text-line2").textContent += line2.charAt(j);
+    j++;
+    setTimeout(typeSecondLine, 50);
+  }
+}
+
+typeFirstLine();
+
 
 // Particles config
 particlesJS("particles-js", {
@@ -79,3 +92,38 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
+
+//  SUCCESS MESSAGE LOGIC
+
+ AOS.init({ duration: 1000, once: true });
+
+  const form = document.querySelector(".contact-form");
+  const successMessage = document.querySelector(".success-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json"
+      }
+    }).then(response => {
+      if (response.ok) {
+        successMessage.style.display = "block";
+        form.reset();
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    });
+  });
+
+  // Hide success message when user starts typing again
+  form.querySelectorAll("input, textarea").forEach(input => {
+    input.addEventListener("input", () => {
+      successMessage.style.display = "none";
+    });
+  });

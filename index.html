@@ -6,11 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/db33253ed2.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
      <div id="particles-js"></div>
-  
+
     <section class="hero">
         <nav class="navbar">
 
@@ -22,12 +23,13 @@
             </ul>
         </nav>
 
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-right">
             <div class="hero-text">
             <h1>Hi, I'm <span class="highlight">Ashvin Negi</span></h1>
             <h2>Full Stack Developer</h2>
-            <p id="typing-text"></p>
-
+            <p id="typing-text-line1"></p>
+            <p id="typing-text-line2"></p>
+            
             <div class="social-icons">
                 <a href="https://github.com/ASHVIN-NEGI-07" target="_blank" aria-label="GitHub">
                     <i class="fa-brands fa-github"></i>
@@ -50,12 +52,112 @@
             </div>
     </section>
 
-    <section id="aboutMe" class="about-section">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>I'm Ashvin Negi , a passionate Full Stack Developer who loves building responsive web apps, clean APIS</p>
-        </div>
-    </section>
+   <!-- ABOUT ME SECTION -->
+<section id="aboutMe" class="about-section" data-aos="fade-right">
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>
+      I'm Ashvin Negi, a dedicated Full Stack Developer with a strong focus on writing clean, scalable, and efficient code. I thrive on solving real-world problems through technology and enjoy building powerful backend systems just as much as creating intuitive frontend interfaces.
+    </p>
+    <p>
+      I prefer structuring logic over styling pixels, but I believe a great product balances both. I’m always eager to learn new frameworks, explore architectural patterns, and collaborate on challenging projects that push me out of my comfort zone.
+    </p>
+    <p>
+      Tech Stack I work with: <strong>Java, Spring Boot, MongoDB, HTML, CSS, JavaScript</strong>
+    </p>
+  </div>
+</section>
+
+<section id="projects" class="projects-section" data-aos="fade-right">
+    <div class="projects-content">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>A sleek, real-time weather app using API from Weather API and async JavaScript. Built with clean UI and city-based weather search.</p>
+         <a href="https://github.com/ASHVIN-NEGI-07/WeatherApp" target="_blank">View on GitHub</a>
+      </div>
+
+     <div class="project-card">
+       <h3>Portfolio Website</h3>
+       <p>My personal portfolio showcasing who I am, what I build, and how to contact me. Created using HTML, CSS, and JavaScript with animated effects.</p>
+      <a href="#">You're viewing it now! 👀</a>
+    </div>
+
+    </div>
+</section>
+
+<section id="skills" class="skills-section" data-aos="fade-right">
+  <div class="skills-content">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+        <span>HTML</span>
+      </div>
+       <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+        <span>CSS</span>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        <span>JavaScript</span>
+      </div>
+        <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+        <span>Java</span>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" />
+        <span>Spring Boot</span>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+        <span>MongoDB</span>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        <span>Git</span>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
+        <span>GitHub</span>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+<section id="contactMe" class="contact-section" data-aos="fade-right">
+  <div class="contact-content">
+    <h2>Contact Me</h2>
+    <p>If you'd like to connect, collaborate, or just say hi — feel free to reach out!</p>
+
+    <div class="contact-info">
+      <p><strong>Email :</strong><a href="mailto:negiashvin7056@gmail.com">negiashvin7056@gmail.com</a></p>
+      <p><strong>Phone Number :</strong><a href="tel:+919015209040">+91 9015209040</a></p>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/xkgblywe" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p class="success-message">Message sent successfully!</p>
+  </div>
+</section>
+
+  </body>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, 
+    once: true      
+  });
+</script>
  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
 
