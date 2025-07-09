@@ -432,7 +432,9 @@ body{
     height: 100px;
     margin-top: 20px;
   }
-
+  .social-icons{
+    margin-top: 25px;
+  }
   /* About Section */
   .about-content {
     padding: 15px;
